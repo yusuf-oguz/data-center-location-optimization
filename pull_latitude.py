@@ -15,7 +15,7 @@ def get_latitude(id):
         print(f"Could not find {query}: {e}")
         return None
 
-def pull_latitudes(file_path = "assets/latitudes.csv"):
+def pull_latitudes(file_path = "data/latitudes.csv"):
     try:
         df_lats = pd.read_csv(file_path)
         print("Read the CSV")

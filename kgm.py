@@ -1,10 +1,17 @@
 import pandas as pd
 import numpy as np
 import pickle
+import csv
 
-df = pd.read_excel("assets/ilmesafe.xlsx")
-df = df.iloc[1:, 2:]
+df = pd.DataFrame()
+try:
+    df = pd.read_csv("data/ilmesave.csv")
+except:
+    df = pd.read_excel("data/ilmesafe.xlsx")
+    df = df.iloc[1:, 2:]
+    df.to_csv("data/ilmesafe.csv")
 d_matrix = df.to_numpy(dtype=float)
+print(d_matrix)
 
 def impossible_pairs (d_matrix = d_matrix, d_min = 100):
     impossible_pairs = []
