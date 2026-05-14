@@ -3,7 +3,7 @@ import numpy as np
 import geopandas as gpd
 import pulp
 import math
-from kgm import impossible_pairs
+from distance import impossible_pairs
 
 def solver(df, budget_mode = False, budget_limit = None, count_limit = None, min_border = 100,seismic_min = 1.0, d_min = 100):
     prob = pulp.LpProblem("Province_Selection", pulp.LpMaximize)

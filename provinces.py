@@ -88,3 +88,28 @@ id_to_tr = {k: v["tr"] for k, v in provinces.items()}
 id_to_en = {k: v["en"] for k, v in provinces.items()}
 id_to_gadm = {k: v.get("gadm", v["en"]) for k, v in provinces.items()}
 gadm_to_id = {v.get("gadm", v["en"]): k for k, v in provinces.items()}
+
+nuts3_to_id = {
+    "TR100": 34, "TR211": 59, "TR212": 22, "TR213": 39,
+    "TR221": 10, "TR222": 17, "TR310": 35, "TR321":  9,
+    "TR322": 20, "TR323": 48, "TR331": 45, "TR332":  3,
+    "TR333": 43, "TR334": 64, "TR411": 16, "TR412": 26,
+    "TR413": 11, "TR421": 41, "TR422": 54, "TR423": 81,
+    "TR424": 14, "TR425": 77, "TR510":  6, "TR521": 42,
+    "TR522": 70, "TR611":  7, "TR612": 32, "TR613": 15,
+    "TR621":  1, "TR622": 33, "TR631": 31, "TR632": 46,
+    "TR633": 80, "TR711": 71, "TR712": 68, "TR713": 51,
+    "TR714": 50, "TR715": 40, "TR721": 38, "TR722": 58,
+    "TR723": 66, "TR811": 67, "TR812": 78, "TR813": 74,
+    "TR821": 37, "TR822": 18, "TR823": 57, "TR831": 55,
+    "TR832": 60, "TR833": 19, "TR834":  5, "TR901": 61,
+    "TR902": 52, "TR903": 28, "TR904": 53, "TR905":  8,
+    "TR906": 29, "TRA11": 25, "TRA12": 24, "TRA13": 69,
+    "TRA21":  4, "TRA22": 36, "TRA23": 76, "TRA24": 75,
+    "TRB11": 44, "TRB12": 23, "TRB13": 12, "TRB14": 62,
+    "TRB21": 65, "TRB22": 49, "TRB23": 13, "TRB24": 30,
+    "TRC11": 27, "TRC12":  2, "TRC13": 79, "TRC21": 63,
+    "TRC22": 21, "TRC31": 47, "TRC32": 72, "TRC33": 73,
+    "TRC34": 56,
+}
+id_to_nuts3 = {v: k for k, v in nuts3_to_id.items()}

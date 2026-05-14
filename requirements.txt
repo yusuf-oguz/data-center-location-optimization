@@ -1,1 +1,8 @@
-pandas,numpy,geopandas,pulp,matplotlib,streamlit,osmnx
+pandas
+numpy
+geopandas
+pulp
+matplotlib
+streamlit
+osmnx
+openpyxl

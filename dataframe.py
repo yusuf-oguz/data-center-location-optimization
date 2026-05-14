@@ -4,7 +4,9 @@ import geopandas as gpd
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 from provinces import *
-from pull_latitude import pull_latitudes as pl
+import sys
+sys.path.insert(0, "scripts")
+from pull_coordinates import pull_coordinates as pl
 
 df = pd.DataFrame({
     "province_id": range(1, 82),
