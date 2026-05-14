@@ -1,26 +1,15 @@
 import pandas as pd
-import numpy as np
 import geopandas as gpd
 import matplotlib as mpl
 import matplotlib.pyplot as plt
-from provinces import *
+import os
 import sys
-sys.path.insert(0, "scripts")
-from pull_coordinates import pull_coordinates as pl
+sys.path.insert(0, os.path.dirname(__file__))
 
-df = pd.DataFrame({
-    "province_id": range(1, 82),
-    "name": [id_to_tr[i] for i in range(1, 82)],
-    "F": np.random.rand(81),  # land availability
-    "P": np.random.rand(81),  # seismic safety
-    "L": np.random.rand(81),  # labor density
-    "E": np.random.rand(81),  # renewable energy
-    "C": np.random.rand(81),  # cooling efficiency
-    "cost": np.random.uniform(1e8, 5e8, 81)
-})
+SCORES_CSV = os.path.join(os.path.dirname(__file__), "data", "processed", "scores.csv")
 
-df_lats = pl()
-
-df = df.merge(df_lats,left_on="province_id",right_on="province_id",how="inner")
+df = pd.read_csv(SCORES_CSV)
+df = df.rename(columns={"ID": "province_id"})
+df = df[["province_id", "name", "latitude", "longitude", "F", "P", "L", "E", "C", "cost"]]
 
 print(df)
