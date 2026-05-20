@@ -24,16 +24,6 @@ wind_df  = pd.read_excel(os.path.join(BASE, "data", "enerji_nasa_tureb", "ruzgar
 
 # ── Sidebar ──────────────────────────────────────────────────────────────────
 
-st.sidebar.markdown("## Renewable Energy Weights (α / β)")
-st.sidebar.caption("E = α × Solar + β × Wind  (auto-normalized so α + β = 1)")
-alpha_pct = st.sidebar.slider("Solar weight α (%)", 0, 100, 60, 5)
-beta_pct  = 100 - alpha_pct
-st.sidebar.write(f"α = {alpha_pct/100:.2f}   β = {beta_pct/100:.2f}")
-
-alpha = alpha_pct / 100.0
-beta  = beta_pct  / 100.0
-
-st.sidebar.markdown("---")
 st.sidebar.markdown("## Land Slope Threshold (θ)")
 st.sidebar.info(
     "θ = 5°  (current dataset)\n\n"
@@ -74,6 +64,16 @@ st.sidebar.markdown("**Normalized weights:**")
 st.sidebar.write(
     f"F={w_1n:.3f}  P={w_2n:.3f}  L={w_3n:.3f}  E={w_4n:.3f}  C={w_5n:.3f}"
 )
+
+st.sidebar.markdown("---")
+st.sidebar.markdown("## Renewable Energy Weights (α / β)")
+st.sidebar.caption("E = α × Solar + β × Wind  (auto-normalized so α + β = 1)")
+alpha_pct = st.sidebar.slider("Solar weight α (%)", 0, 100, 60, 5)
+beta_pct  = 100 - alpha_pct
+st.sidebar.write(f"α = {alpha_pct/100:.2f}   β = {beta_pct/100:.2f}")
+
+alpha = alpha_pct / 100.0
+beta  = beta_pct  / 100.0
 
 st.sidebar.markdown("---")
 st.sidebar.markdown("## Solver")
