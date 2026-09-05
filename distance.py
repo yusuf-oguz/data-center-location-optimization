@@ -1,7 +1,8 @@
+import os
 import pandas as pd
 import numpy as np
 
-df = pd.read_excel("data/mesafe_kgm/ilmesafe.xlsx")
+df = pd.read_excel(os.path.join(os.path.dirname(__file__), "data", "mesafe_kgm", "ilmesafe.xlsx"))
 df = df.iloc[1:, 2:]
 d_matrix = df.to_numpy(dtype=float)
 
