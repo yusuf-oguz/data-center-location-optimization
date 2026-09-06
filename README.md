@@ -1,7 +1,6 @@
 # Multi-Criteria Location Optimization for Data Center Placement in Türkiye
 
-**YZV 202E - Optimization for Data Science, Spring 2026**  
-Istanbul Technical University — Osmancan Sarı, Efe Karan Hacımustafaoğlu, Yusuf Oğuz
+A team project by Osmancan Sarı, Efe Karan Hacımustafaoğlu, and Yusuf Oğuz.
 
 ---
 
