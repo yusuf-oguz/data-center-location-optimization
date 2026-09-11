@@ -1,5 +1,7 @@
 # Multi-Criteria Location Optimization for Data Center Placement in Türkiye
 
+**Live demo:** [data-center-location-optimization.streamlit.app](https://data-center-location-optimization.streamlit.app/)
+
 <details>
 <summary>🇹🇷 Türkçe özet için tıklayın</summary>
 
@@ -9,7 +11,7 @@ Osmancan Sarı, Efe Karan Hacımustafaoğlu ve Yusuf Oğuz'un ortak projesi. Tü
 
 **Sonuç (eşit ağırlık, K=5):** Ankara, Kayseri, Yozgat, Aksaray, Erzurum seçiliyor. İlginç bir bulgu: en yüksek bireysel skora sahip il olan Konya (0.692), sınıra yakınlığı nedeniyle dışlanıyor. Ağırlıklar değiştirilince sonuç anlamlı şekilde kayıyor: sismik öncelik İç Anadolu'ya yoğunlaşıyor, soğutma önceliği doğuya (Erzurum/Kars/Ağrı) kayıyor, yenilenebilir enerji önceliği tek kıyı ilini (İzmir) sisteme sokuyor.
 
-**Etkileşimli uygulama:** Streamlit dashboard'u, tüm ağırlıkları/kısıtları canlı ayarlayıp sonucu anında görmeyi sağlıyor.
+**Etkileşimli uygulama:** Streamlit dashboard'u, tüm ağırlıkları/kısıtları canlı ayarlayıp sonucu anında görmeyi sağlıyor. Canlı: [data-center-location-optimization.streamlit.app](https://data-center-location-optimization.streamlit.app/)
 
 </details>
 
@@ -79,6 +81,8 @@ Constraints shape the outcome as much as the weights do. At the default 100 km m
 ## Interactive application
 
 A Streamlit dashboard (`app.py`) exposes every tunable parameter: the five criterion weights (with quick presets for equal/seismic/cooling/renewable/land priority), the solar/wind blend, the land-slope threshold, the count-vs-budget solving mode, and all constraint parameters. Changing a slider and clicking "Solve!" reconstructs and re-solves the BIP in real time and updates the choropleth map.
+
+Live at [data-center-location-optimization.streamlit.app](https://data-center-location-optimization.streamlit.app/), no installation needed.
 
 ## Repository structure
 
